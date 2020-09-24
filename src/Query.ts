@@ -58,3 +58,8 @@ export class Query
     }
   }
 }
+
+export function query(engine: EcsEngine):Query
+{
+  return new Query(engine);
+}
