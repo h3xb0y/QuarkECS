@@ -1,0 +1,6 @@
+{
+  "name": "quark-ecs",
+  "description": "Tiny ECS for TypeScript",
+  "version": "0.0.1",
+  "license": "MIT"
+}
