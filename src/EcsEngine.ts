@@ -1,6 +1,6 @@
 import {Entity} from "./Entity";
 import {IInitSystem, IUpdateSystem} from "./System";
-import {Data, Service} from "./Types";
+import {Component, Data, Service} from "./Types";
 
 export class EcsEngine
 {
@@ -9,6 +9,7 @@ export class EcsEngine
   private readonly _initSystems: IInitSystem[] = [];
   private readonly _data: Record<string, any> = {};
   private readonly _services: Record<string, any> = {};
+  private readonly _eventComponents: Component<any>[] = [];
   
   public initialize(): void
   {
@@ -18,14 +19,21 @@ export class EcsEngine
   public update(): void
   {
     this._updateSystems.forEach(x => x.update(this));
+    this._eventComponents.forEach(x => this._entities.forEach(y => y.remove(x)));
   }
   
   public addSystem(system: IUpdateSystem | IInitSystem): void
   {
     if ("update" in system)
       this._updateSystems.push(system);
-    else
+    if("init" in system)
+      
       this._initSystems.push(system);
+  }
+  
+  public registerEventComponent(eventComponent: Component<any>): void
+  {
+    this._eventComponents.push(eventComponent);
   }
   
   public addEntity(entity: Entity): void
