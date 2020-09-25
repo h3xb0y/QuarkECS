@@ -71,7 +71,7 @@ export class EcsEngine
   {
     const value = this._data[data];
     if (!value)
-      throw new TypeError("Data doesnt found");
+      throw new TypeError("Data not found");
     
     return value;
   }
@@ -80,7 +80,7 @@ export class EcsEngine
   {
     const value = this._services[service];
     if (!value)
-      throw new TypeError("Data doesnt found");
+      throw new TypeError("Data not found");
     
     return value;
   }

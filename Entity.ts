@@ -23,7 +23,7 @@ export class Entity
   {
     const value = this._components[component];
     if (!value)
-      throw new TypeError("Component doesnt found");
+      throw new TypeError("Component not found.");
     
     return value;
   }
