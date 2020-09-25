@@ -13,10 +13,19 @@ or
 npm install @h3xb0y/quark-ecs
 ```
 
+## API
+
+See the [wiki](https://github.com/h3xb0y/quark-ecs/wiki/API)
+
 ## Usage
 Simple usage example :
 ```typescript
-import {EcsEngine} from "./EcsEngine"; import {component} from "./Types"; import {IUpdateSystem} from "./RaiseValueSystem"; import {query} from "./Query"; import {IInitSystem} from "./System"; import {Entity} from "./Entity";
+import {EcsEngine} from "./EcsEngine"; 
+import {component} from "./Types"; 
+import {IUpdateSystem} from "./System"; 
+import {query} from "./Query"; 
+import {IInitSystem} from "./System"; 
+import {Entity} from "./Entity";
 
 interface IValueComponent
 {
@@ -53,18 +62,15 @@ engine.init(); // calls only one time
 engine.update(); // need call every tick or every frame
 
 ```
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## API
-
-TODO
 
 ## Examples
 
 TODO
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
