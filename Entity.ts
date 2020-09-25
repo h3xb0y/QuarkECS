@@ -14,9 +14,14 @@ export class Entity
     this._components[component] = value;
   }
   
-  remove(component: Component<any>): void
+  public remove(component: Component<any>): void
   {
     delete this._components[component];
+  }
+  
+  public hasAnyComponent(): boolean
+  {
+    return Object.keys(this._components).length > 0;
   }
   
   public get<T>(component: Component<T>): T

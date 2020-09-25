@@ -20,6 +20,12 @@ export class EcsEngine
   {
     this._updateSystems.forEach(x => x.update(this));
     this._eventComponents.forEach(x => this._entities.forEach(y => y.remove(x)));
+    this._entities.forEach(x => {
+      if(x.hasAnyComponent())
+        return;
+    
+      this.removeEntity(x);
+    })
   }
   
   public addSystem(system: IUpdateSystem | IInitSystem): void
