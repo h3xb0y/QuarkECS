@@ -10,7 +10,9 @@
   "files": [
     "/build"
   ],
-  "repository": "git://github.com/h3xb0y/quark-ecs.git",
+  "repository": {
+    "url": "git://github.com/h3xb0y/quark-ecs.git"
+  },
   "scripts": {
     "build": "tsc"
   },
