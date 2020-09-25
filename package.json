@@ -1,6 +1,18 @@
 {
   "name": "quark-ecs",
-  "description": "Tiny ECS for TypeScript",
   "version": "0.0.1",
+  "description": "Tiny ECS for TypeScript",
+  "main": "/build/index.js",
+  "files": [
+    "/build"
+  ],
+  "repository": {
+    "url": "https://github.com/h3xb0y/QuarkECS",
+    "type": "git"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "h3xb0y <somersaultbreaking@gmail.com>",
   "license": "MIT"
 }
