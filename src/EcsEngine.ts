@@ -26,8 +26,8 @@ export class EcsEngine
   {
     if ("update" in system)
       this._updateSystems.push(system);
+    
     if("init" in system)
-      
       this._initSystems.push(system);
   }
   
