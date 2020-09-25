@@ -3,16 +3,28 @@
   "version": "0.0.1",
   "description": "Tiny ECS for TypeScript",
   "main": "/build/index.js",
+  "type": "/build/index.d.ts",
   "files": [
     "/build"
   ],
   "repository": {
-    "url": "https://github.com/h3xb0y/QuarkECS",
+    "url": "git+https://github.com/h3xb0y/QuarkECS.git",
     "type": "git"
   },
   "scripts": {
     "build": "tsc"
   },
   "author": "h3xb0y <somersaultbreaking@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h3xb0y/QuarkECS/issues"
+  },
+  "homepage": "https://github.com/h3xb0y/QuarkECS#readme",
+  "keywords": [
+    "ecs",
+    "typescript",
+    "entity",
+    "component",
+    "system"
+  ]
 }
