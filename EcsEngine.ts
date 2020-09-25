@@ -25,7 +25,7 @@ export class EcsEngine
         return;
     
       this.removeEntity(x);
-    })
+    });
   }
   
   public addSystem(system: IUpdateSystem | IInitSystem): void
