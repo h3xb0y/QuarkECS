@@ -4,6 +4,9 @@
   "description": "Tiny ECS for TypeScript",
   "main": "/build/index.js",
   "type": "/build/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "files": [
     "/build"
   ],
