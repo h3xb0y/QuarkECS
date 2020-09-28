@@ -28,32 +28,38 @@ export class EcsEngine
     });
   }
   
-  public addSystem(system: IUpdateSystem | IInitSystem): void
+  public addSystem(system: IUpdateSystem | IInitSystem): EcsEngine
   {
     if ("update" in system)
       this._updateSystems.push(system);
     
     if("init" in system)
       this._initSystems.push(system);
+    
+    return this;
   }
   
-  public registerEventComponent(eventComponent: Component<any>): void
+  public registerEventComponent(eventComponent: Component<any>): EcsEngine
   {
     this._eventComponents.push(eventComponent);
+    
+    return this;
   }
   
-  public addEntity(entity: Entity): void
+  public addEntity(entity: Entity): EcsEngine
   {
     this._entities.push(entity);
+    
+    return this;
   }
   
-  public removeEntity(entity: Entity): void
+  public removeEntity(entity: Entity): EcsEngine
   {
     let index = this._entities.indexOf(entity);
-    if (index < 0)
-      return;
+    if (index >= 0)
+      this._entities.splice(index, 1);
     
-    this._entities.splice(index, 1);
+    return this;
   }
   
   public entities(selector: (x: Entity) => boolean): Entity[]
@@ -68,9 +74,11 @@ export class EcsEngine
     return entities;
   }
   
-  public setData<T>(data: Data<T>, value: T): void
+  public setData<T>(data: Data<T>, value: T): EcsEngine
   {
     this._data[data] = value;
+    
+    return this;
   }
   
   public getData<T>(data: Data<T>): T
@@ -91,8 +99,10 @@ export class EcsEngine
     return value;
   }
   
-  public setService<T>(service: Service<T>, value: T): void
+  public setService<T>(service: Service<T>, value: T): EcsEngine
   {
     this._services[service] = value;
+    
+    return this;
   }
 }
