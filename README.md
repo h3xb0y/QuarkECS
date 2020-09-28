@@ -56,8 +56,9 @@ class RaiseValueSystem implements IUpdateSystem, IInitSystem
 
 // setup ecs engine
 let engine = new EcsEngine();
-engine.addSystem(new RaiseValueSystem());
-engine.init(); // calls only one time
+engine
+  .addSystem(new RaiseValueSystem())
+  .init();
 
 engine.update(); // need call every tick or every frame
 
